@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head>
+        <meta charset="utf-8"><link rel="icon" href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            /* css 代码  */
+            
+        </style>
+        <script src="https://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+        <script src="https://cdn.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+        <script src="https://cdn.highcharts.com.cn/highcharts/themes/dark-unica.js"></script>
+    </head>
+<body>
+<div id="container" style="min-width:400px;height:400px"></div>
+<script>
+    // JS 代码
+    var chart = Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: '全国各城市岗位数量'
+    },
+   
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45  // 设置轴标签旋转角度
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: '人口 (百万)'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: '人口总量: <b>{point.y:.1f}百万</b>'
+    },
+    series: [{
+        name: '总人口',
+        data: [
+            ['上海', 22.03],
+            ['北京',19.2 ],
+            ['天津', 3.1],
+            ['广州', 16.4],
+            ['深圳',25.3 ],
+            ['南昌',2.61],
+            ['杭州', 0.4],
+            ['其他城市',11.03]
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.1f}', // :.1f 为保留 1 位小数
+            y: 10
+        }
+    }]
+});
+</script>
+</body>
+</html>
